@@ -149,6 +149,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    // Запрет правой кнопки мыши
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert('Копирование контента запрещено');
+});
+
+// Запрет сочетаний клавиш Ctrl+C, Ctrl+U, F12
+document.addEventListener('keydown', function(e) {
+    // Ctrl+U (просмотр кода)
+    if (e.ctrlKey && e.keyCode === 85) {
+        e.preventDefault();
+        alert('Просмотр кода страницы запрещен');
+    }
+    // F12 (инструменты разработчика)
+    if (e.keyCode === 123) {
+        e.preventDefault();
+        alert('Инструменты разработчика отключены');
+    }
+    // Ctrl+Shift+I (DevTools)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+        e.preventDefault();
+        alert('Доступ запрещен');
+    }
+});
     
     console.log('✅ Сайт загружен и готов к работе!');
 });
