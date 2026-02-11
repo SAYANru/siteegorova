@@ -386,3 +386,16 @@ html, body {
         font-size: 0.9rem;
     }
 }
+/* Запрет выделения текста и копирования */
+body {
+    user-select: none; /* Запрет выделения */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Запрет перетаскивания изображений */
+img {
+    pointer-events: none; /* Нельзя перетащить */
+    -webkit-user-drag: none;
+}
